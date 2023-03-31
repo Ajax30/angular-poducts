@@ -30,6 +30,7 @@ export class AppComponent {
   );
 
   private errorHandling(err: any): Observable<Page<Product>> {
+    console.error(err);
     this.isError = true;              
     return of();
   }

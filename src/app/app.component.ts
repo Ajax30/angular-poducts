@@ -31,7 +31,10 @@ export class AppComponent {
 
   private errorHandling(err: any): Observable<Page<Product>> {
     console.error(err);
-    this.isError = true;              
+    // Wait before displaying error message (for slow connections)
+    setTimeout(() => {
+      this.isError = true; 
+    }, 250);             
     return of();
   }
 
